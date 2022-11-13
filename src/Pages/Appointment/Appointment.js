@@ -9,7 +9,7 @@ const Appointment = () => {
         <div className="w-1/2">
           <DatePicker
             selected={datePick}
-            onSelect={(datePick) => setDatePick(datePick)} /* অন সিলেক্ট না দিলে ডেট সিলেক্ট করতে পারবা না | */
+            onSelect={(datePick) => setDatePick(datePick)} /* অন সিলেক্ট না দিলে ডেট সিলেক্ট করতে পারবা না | কথাটা যেন মনে থাকে |  */
           ></DatePicker>
         </div>
         <div className="w-1/2">
