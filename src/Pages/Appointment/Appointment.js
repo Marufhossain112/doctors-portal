@@ -1,22 +1,29 @@
+import { format } from "date-fns";
 import React, { useState } from "react";
+import { DayPicker } from "react-day-picker";
 import appointmentImg from "../../assets/images/appointment.png";
-import DatePicker from "react-datepicker";
 const Appointment = () => {
   const [datePick, setDatePick] = useState(new Date());
+  let footer = <p>Please pick a date.</p>;
+  if (datePick) {
+    footer = <p>You have selected {format(datePick, "PP")}</p>;
+  }
   return (
-    <div>
-      <div className="flex">
-        <div className="w-1/2">
-          <DatePicker
-            selected={datePick}
-            onSelect={(datePick) => setDatePick(datePick)} /* অন সিলেক্ট না দিলে ডেট সিলেক্ট করতে পারবা না | কথাটা যেন মনে থাকে |  */
-          ></DatePicker>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="max-w-sm rounded-lg shadow-lg">
+          <img src={appointmentImg} alt="measuring.jpg" />
         </div>
-        <div className="w-1/2">
-          <img src={appointmentImg} alt="apn.img" />
+        <div>
+          <DayPicker
+            className="mr-6"
+            mode="single"
+            selected={datePick}
+            onSelect={setDatePick}
+            footer={footer}
+          ></DayPicker>
         </div>
       </div>
-      <div></div>
     </div>
   );
 };
