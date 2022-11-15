@@ -1,13 +1,13 @@
-import { RouterProvider } from 'react-router-dom';
-import './App.css';
-import router from './Routes/Routes/Routes';
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/routes";
 
-function App() {
+const App = () => {
   return (
-    <div className='max-w-[1440px] mx-auto'>
+    <div className="max-w-[1440px] mx-auto">
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
-}
+};
 
 export default App;
